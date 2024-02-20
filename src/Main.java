@@ -11,27 +11,34 @@ public class Main {
         Scanner input = new Scanner(System.in);
         double  longRim, shortRim, thirdRim, area, perimeter, helper;
 
-        // Collecting inputs;
-        System.out.println("Please enter the first rim: ");
-        shortRim = input.nextDouble();
-        System.out.println("Please enter the second rim: ");
-        longRim = input.nextDouble();
-        System.out.println("Please enter the third rim: ");
-        thirdRim = input.nextDouble();
 
-        // Clearing the mathematical errors;
+
         while (true){
-            if (shortRim <= 0 || longRim <= 0 || thirdRim <= 0){
+
+            // Collecting inputs;
+            System.out.println("Please enter the first rim: ");
+            shortRim = input.nextDouble();
+            System.out.println("Please enter the second rim: ");
+            longRim = input.nextDouble();
+            System.out.println("Please enter the third rim: ");
+            thirdRim = input.nextDouble();
+
+            // Clearing the mathematical errors;
+            if (shortRim <= 0 || longRim <= 0 || thirdRim <= 0) {
+
                 System.out.println("Mathematical error, rims can not be negative.");
-                break;
-            }else {
+
+            } else {
+
                 // Equations of area and perimeter;
                 perimeter = (longRim + shortRim + thirdRim);
                 System.out.println("Perimeter: " + perimeter);
                 helper = perimeter/2;
                 area = Math.sqrt(helper * (helper-shortRim) * (helper - longRim) * (helper * thirdRim));
                 System.out.println("Area: " + area);
+
                 break;
+
             }
         }
     }
